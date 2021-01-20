@@ -17,14 +17,31 @@
     </li>
 </ul>
 <label class='checaderas'>Ver Info del Heroe <input type='checkbox' id='ver'/></label>
+<button (click)='ver = !ver'>{{ver ? 'Mostrar info' : 'Ocultar info'}}</button>
 <hr>
 
-<div *ngIf='selectedHero' id='info'>
-    <h2>{{selectedHero.name | uppercase}} Detalles</h2>
-    <div><span>ID: </span>{{selectedHero.id}}</div>
-    <div>
-        <label>NOMBRE:
-            <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-        </label>
+<div class='info' [ngClass]="'ocultar'">
+    <div *ngIf='selectedHero'>
+        <h2>{{selectedHero.name | uppercase}} Detalles</h2>
+        <div><span>ID: </span>{{selectedHero.id}}</div>
+        <div>
+            <label>NOMBRE:
+                <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+            </label>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf='ver'>
+    <div >
+        <h2>{{selectedHero.name | uppercase}} Detalles</h2>
+        <div><span>ID: </span>{{selectedHero.id}}</div>
+        <div>
+            <label>NOMBRE:
+                <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+            </label>
+        </div>
     </div>
 </div>

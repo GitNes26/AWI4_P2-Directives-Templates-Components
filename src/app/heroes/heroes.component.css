@@ -39,6 +39,9 @@ li{
     background-color: rgb(141, 141, 141);
     cursor: pointer;
 }
+.ocultar{
+    visibility: hidden;
+}
 .checaderas{
     padding: 5px;
     background-color: #369;
@@ -47,5 +50,5 @@ li{
     font-weight: bolder;
 }
 
-#ver:checked ~ * #info{ visibility: visible;}
-#ver:not() ~ * #info{ visibility: hidden;}
+#ver:checked ~ .info{ visibility: visible;}
+#ver:not() ~ .info{ visibility: hidden;}

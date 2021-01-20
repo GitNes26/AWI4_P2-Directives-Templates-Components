@@ -12,6 +12,7 @@ export class HeroesComponent implements OnInit {
   hero: Hero = {id: 1, name:"Spider man"}
   heroes = Heroes
   public selectedHero: Hero;
+  ver = true
 
   constructor() { }
 
